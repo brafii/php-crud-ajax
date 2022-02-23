@@ -238,6 +238,34 @@
           }
         });
 
+        //Delete user records
+        $("body").on("click", ".delBtn", function(e){
+          e.preventDefault();
+          var td = $(this).closest('tr');
+          del_id = $(this).attr('id');
+          Swal.fire({
+          title: 'Are you sure?',
+          text: "You won't be able to revert this!",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            $.ajax({
+              url: "controller/action.php",
+              type: "POST",
+              data:{del_id:del_id},
+              success: function(response){
+                console.log(response);
+              }
+            });
+          }
+          });
+
+        });
+
       });
           
 
