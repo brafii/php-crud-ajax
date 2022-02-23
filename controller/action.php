@@ -46,6 +46,7 @@
 
     //Logic for inserting data into database
     if(isset($_POST['action']) && $_POST['action'] == "insert"){
+
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
@@ -64,6 +65,18 @@
       echo json_encode($row);
 
     }
+
+    // Logic for updating records
+    if(isset($_POST['action']) && $_POST['action'] == "update"){
+
+      $id = $_POST['id'];
+      $firstname = $_POST['firstname'];
+      $lastname = $_POST['lastname'];
+      $email = $_POST['email'];
+      $phone = $_POST['phone'];
+
+      $db->updateUsers($id, $firstname, $lastname, $email, $phone);
+  }
 
 
 ?>
