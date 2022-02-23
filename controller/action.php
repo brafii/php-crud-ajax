@@ -55,4 +55,15 @@
     }
 
 
+    // Editing user records
+    if(isset($_POST['edit_id'])){
+
+      $id = $_POST['edit_id'];
+
+      $row = $db->getUserByID($id);
+      echo json_encode($row);
+
+    }
+
+
 ?>
