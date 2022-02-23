@@ -194,7 +194,7 @@
         });
 
 
-        //edit user records
+        //fetch user records by id
         $("body").on("click", ".editBtn", function(e){
           // console.log("working");
           e.preventDefault();
@@ -204,10 +204,38 @@
               type: "POST",
               data: {edit_id:edit_id},
               success: function(response){
-                console.log(response);
-                
+                // console.log(response);
+                data = JSON.parse(response);
+                // console.log(data);
+                $("#id").val(data.id);
+                $("#firstname").val(data.firstname);
+                $("#lastname").val(data.lastname);
+                $("#email").val(data.email);
+                $("#phone").val(data.phone);
               }
           });
+        });
+
+        //update records
+        $("#update").click(function(e){
+          if($("#edit-form-data")[0].checkValidity()){
+            e.preventDefault();
+            $.ajax({
+              url: "controller/action.php",
+              type: "POST",
+              data: $("#edit-form-data").serialize()+"&action=update",
+              success: function(response){
+                // console.log(response);
+                Swal.fire({
+                  title: "User Updated Successfully",
+                  type: "success",
+                })
+                $("#editModal").modal('hide');
+                $("#edit-form-data")[0].reset();
+                showAllUsers();
+              }
+            });
+          }
         });
 
       });
