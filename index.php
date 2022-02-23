@@ -133,7 +133,7 @@
                   <label class="form-label">Phone</label>
                   <input type="text" class="form-control" name="phone" id="phone" required>
                 </div>
-                <button type="submit" id="update" id="update" class="btn btn-primary">Submit</button>
+                <button type="submit" id="update" id="update" class="btn btn-primary">Update</button>
               </form>
             </div>
           </div>

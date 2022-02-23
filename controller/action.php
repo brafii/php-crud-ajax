@@ -28,11 +28,11 @@
                     <td>'.$row['email'].'</td>
                     <td>'.$row['phone'].'</td>
                     <td>
-                      <a class="btn btn-outline-success btn-sm infoBtn" href="#" role="button">Info</a>
+                      <a class="btn btn-outline-success btn-sm infoBtn" href="#" role="button" id="'.$row['id'].'">Info</a>
 
-                      <a class="btn btn-outline-primary btn-sm editBtn" href="#" role="button" data-bs-toggle="modal" data-bs-target="#editModal">Edit</a>
+                      <a class="btn btn-outline-primary btn-sm editBtn" href="#" id="'.$row['id'].'" role="button" data-bs-toggle="modal" data-bs-target="#editModal">Edit</a>
 
-                      <a class="btn btn-outline-danger btn-sm delBtn" href="#" role="button">Del</a>
+                      <a class="btn btn-outline-danger btn-sm delBtn" href="#" role="button" id="'.$row['id'].'">Del</a>
                     </td></tr>';
             }
             $output .= '</tbody></table>';
