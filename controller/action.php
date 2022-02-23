@@ -79,4 +79,12 @@
   }
 
 
+  //deleting records from database
+  if(isset($_POST['del_id'])){
+    $id = $_POST['del_id'];
+
+    $db->deleteRecords($id);
+  }
+
+
 ?>
