@@ -189,8 +189,25 @@
                 $("#form-data")[0].reset();
                 showAllUsers();
               }
-            })
+            });
           }
+        });
+
+
+        //edit user records
+        $("body").on("click", ".editBtn", function(e){
+          // console.log("working");
+          e.preventDefault();
+          edit_id = $(this).attr('id');
+          $.ajax({
+              url: "controller/action.php",
+              type: "POST",
+              data: {edit_id:edit_id},
+              success: function(response){
+                console.log(response);
+                
+              }
+          });
         });
 
       });
