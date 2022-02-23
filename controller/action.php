@@ -55,7 +55,7 @@
     }
 
 
-    // Editing user records
+    // Fetching user id
     if(isset($_POST['edit_id'])){
 
       $id = $_POST['edit_id'];
