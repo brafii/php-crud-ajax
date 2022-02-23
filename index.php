@@ -72,7 +72,41 @@
       </div>
 
 
-      <!-- Modal -->
+      <!-- Add new user modal -->
+      <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addModalLabel">Add User</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="" method="POST" id="form-data">
+                <div class="mb-3">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control" name="firstname" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control" name="lastname" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Phone</label>
+                  <input type="text" class="form-control" name="phone" required>
+                </div>
+                <button type="submit" id="insert" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Edit/Update user modal -->
       <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
