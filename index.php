@@ -243,21 +243,39 @@
           e.preventDefault();
           var tr = $(this).closest('tr');
           del_id = $(this).attr('id');
+
           Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.value) {
-            
-          }
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.value) {
+
+              $.ajax({
+                url: "controller/action.php",
+                type: "POST",
+                data: {del_id:del_id},
+                success: function(response){
+                  tr.css('background-color', '#ff6666');
+                  Swal.fire(
+                    'Deleted!',
+                    'Data deleted successfully',
+                    'success'
+                  )
+                  showAllUsers();
+                }
+              });
+              
+            }
           });
 
         });
+
+
 
       });
           

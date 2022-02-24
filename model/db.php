@@ -71,7 +71,7 @@
 
         public function deleteRecords($id){
             $sql = 'DELETE FROM users WHERE id = :id';
-            $statement = $this->conn->prepare($id);
+            $statement = $this->conn->prepare($sql);
             $statement->execute([
                 ':id' => $id,
             ]);
